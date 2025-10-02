@@ -71,7 +71,12 @@ body {
   gap: 10px;
   font-weight: 700;
 }
-.brand .logo { color: var(--purple); font-size: 22px; }
+.brand .logo-img { 
+  width: 32px; 
+  height: 32px; 
+  object-fit: contain;
+  border-radius: 6px;
+}
 .brand .name {
   font-family: 'Orbitron', ui-sans-serif;
   letter-spacing: 0.6px;
