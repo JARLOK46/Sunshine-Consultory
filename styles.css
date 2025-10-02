@@ -921,6 +921,18 @@ body {
   opacity: 1;
 }
 
+.use-case strong {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 1.05em;
+  text-shadow: 0 0 10px rgba(139,92,246,0.3);
+  background: linear-gradient(135deg, var(--purple), #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 8px;
+}
+
 .use-case:hover { 
   border-color: rgba(139,92,246,0.8);
   transform: translateY(-12px) rotateX(8deg) rotateY(5deg) scale(1.03);
