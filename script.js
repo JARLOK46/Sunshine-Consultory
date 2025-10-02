@@ -19,6 +19,33 @@ window.addEventListener('DOMContentLoaded', () => {
       el.classList.add('is-visible');
     }
   });
+
+  // Menú hamburguesa
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.site-header .nav');
+  const backdrop = document.querySelector('.nav-backdrop');
+  if (toggle && nav) {
+    const openMenu = () => {
+      nav.classList.add('open');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+    };
+    const closeMenu = () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    };
+    toggle.addEventListener('click', () => {
+      if (nav.classList.contains('open')) closeMenu(); else openMenu();
+    });
+    backdrop && backdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    nav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => { closeMenu(); });
+    });
+  }
 });
 
 // Reveal stagger for children
